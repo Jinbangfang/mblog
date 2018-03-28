@@ -16,17 +16,35 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="'container-fluid">
+    <div class="container-fluid">
         {% include 'header.html'%}
-        <div class="panel panel-default">
-            <div class="panel panel-heading">
-                {% block headmessage %} {% endblock %}
+        <div class="row">
+            <div class="col-sm-4 col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel panel-heading">
+                        <h3>MENU</h3>
+                    </div>
+                    <div  class="panel panel-body">
+                        <div class="list-group">
+                            <a href="/" class="list-group-item">HOME</a>
+                            <a href="http://tar.so/news" class="list-group-item">实时新闻</a>
+                            <a href="http://drho.tw/news" class="list-group-item">电视新闻</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div  class="panel panel-body"
-                {% block content %} {% endblock %}
-            </div>
-            <div class="panel-footer"
-                {% include 'footer.html'%}
+            <div class="col-sm-8 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {% block headmessage %} {% endblock %}
+                    </div>
+                    <div class="panel-body">
+                        {% block content %} {% endblock %}
+                    </div>
+                    <div class="panel-footer">
+                        {% include 'footer.html'%}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
